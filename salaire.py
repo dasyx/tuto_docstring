@@ -20,11 +20,17 @@ def lire_heures_semaine():
         except ValueError:
             print("Veuillez saisir un nombre valide.")
 
+def calculer_salaire_horaire(salaire_mensuel, heures_semaine):
+    salaire_horaire = salaire_mensuel / (heures_semaine * 4.33)
+    return salaire_horaire
+
 def lire_entrees():
     salaire_mensuel = lire_salaire_mensuel()
     heures_semaine = lire_heures_semaine()
-    # ajouter ici tout traitement supplémentaire si nécessaire
+    salaire_horaire = calculer_salaire_horaire(salaire_mensuel, heures_semaine)
     print(f"Le salaire saisi est de {salaire_mensuel} euros.")
     print(f"Le nombre d'heures travaillées est de {heures_semaine} heures.")
+    print(f"Le salaire horaire est de : {round(salaire_horaire, 2)} euros")
 
 lire_entrees()
+
